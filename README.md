@@ -117,12 +117,5 @@ Hugging Face Hub for deployment
 
 📦 Dockerize the full app for production
 
-🙋‍♂️ Author
-Subhash Mothukuru
-👨‍💻 AI/ML Engineer | Generative AI | Fine-Tuning
-📧 subhashmothukuri@gmail.com
-🔗 LinkedIn
-🔗 GitHub
-🔗 Portfolio
 
 ```
