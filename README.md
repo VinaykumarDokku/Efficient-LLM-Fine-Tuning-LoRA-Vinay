@@ -1,30 +1,65 @@
-# 🚀 Fine-Tuning GPT-2 / T5 with Hugging Face Transformers + Streamlit UI
+🚀 Fine-Tuning GPT-2 / T5 with Hugging Face Transformers + Streamlit UI
 
-This project demonstrates how to fine-tune a Seq2Seq language model using **LoRA (Low-Rank Adaptation)** on instruction-based datasets with Hugging Face Transformers. It includes:
+Repository owner: Vinay Kumar Dokku
+Repository: Efficient-LLM-Fine-Tuning-LoRA-Vinay
 
-- ✅ Fine-tuning code with `peft` (for LoRA)
-- ✅ Streamlit-based inference UI
-- ✅ Hugging Face Hub integration
-- ✅ Instruction tuning using `instruction_dataset.json`
-- ✅ No-code fine-tuning experiment with Hugging Face AutoTrain
+This project demonstrates how to fine-tune a Seq2Seq language model using LoRA (Low-Rank Adaptation) on instruction-based datasets with Hugging Face Transformers. It includes:
+✅ Fine-tuning code with peft (for LoRA)
+✅ Streamlit-based inference UI
+✅ Hugging Face Hub integration
+✅ Instruction tuning using instruction_dataset.json
+✅ No-code fine-tuning experiment with Hugging Face AutoTrain
 
----
+Fine-Tuning Concepts Covered
 
-##  Fine-Tuning Concepts Covered
+Method
 
-| Method                                                | Description                                                                                    |
-| ----------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| **Supervised Fine-Tuning (SFT)**                      | Trained on labeled dataset with instruction → input → output structure.                        |
-| **Generic/Unsupervised Fine-Tuning**                  | Uses raw `.txt` or `.jsonl` data (not in this project).                                        |
-| **Reinforcement Learning with Human Feedback (RLHF)** | Aligns models to preferred human responses via reward modeling (not applied here).             |
-| **Direct Preference Optimization (DPO)**              | Trains on (prompt, preferred, rejected) triplets to optimize behavior without reward modeling. |
-| **LoRA (Low-Rank Adaptation)**                        | Efficient fine-tuning technique by adding small trainable weights. Applied in this repo.       |
+Description
 
-In this project, we apply **Supervised Fine-Tuning** using LoRA on a small instruction dataset and deploy it using Streamlit.
+Supervised Fine-Tuning (SFT)
 
----
+Trained on labeled dataset with instruction → input → output structure.
 
-##  Project Structure
+Generic/Unsupervised Fine-Tuning
+Uses raw .txt or .jsonl data (not in this project).
+
+
+
+
+
+Reinforcement Learning with Human Feedback (RLHF)
+
+
+
+Aligns models to preferred human responses via reward modeling (not applied here).
+
+
+
+
+
+Direct Preference Optimization (DPO)
+
+
+
+Trains on (prompt, preferred, rejected) triplets to optimize behavior without reward modeling.
+
+
+
+
+
+LoRA (Low-Rank Adaptation)
+
+
+
+Efficient fine-tuning technique by adding small trainable weights. Applied in this repo.
+
+In this project, we apply Supervised Fine-Tuning using LoRA on a small instruction dataset and deploy it using Streamlit.
+
+
+
+
+
+Project Structure
 
 .
 ├── inference.py # Streamlit UI for model inference
@@ -38,21 +73,48 @@ markdown
 Copy
 Edit
 
----
 
-##  Fine-Tuning Pipeline (`finetuning.py`)
 
-1. **Model Used:** `t5-small` (can replace with `gpt2` or other Seq2Seq models)
-2. **Dataset:** Custom JSON (`instruction_dataset.json`) with:
-   - `"instruction"`: what to do
-   - `"input"`: the input text
-   - `"output"`: the expected response
-3. **Training Method:** Supervised LoRA fine-tuning using `peft`
-4. **Trainer:** `Seq2SeqTrainer` from Hugging Face
 
-###  Run Fine-Tuning:
 
-```bash
+Fine-Tuning Pipeline (finetuning.py)
+
+
+
+
+
+Model Used: t5-small (can replace with gpt2 or other Seq2Seq models)
+
+
+
+Dataset: Custom JSON (instruction_dataset.json) with:
+
+
+
+
+
+"instruction": what to do
+
+
+
+"input": the input text
+
+
+
+"output": the expected response
+
+
+
+Training Method: Supervised LoRA fine-tuning using peft
+
+
+
+Trainer: Seq2SeqTrainer from Hugging Face
+
+
+
+Run Fine-Tuning:
+
 python finetuning.py
 After training, the model will be saved in:
 
